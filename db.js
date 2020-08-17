@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const { Book, BookCategory } = require("./models");
 
 mongoose
-  .connect("mongodb://LandWind:27170/cat-shop", {
-      // .connect("mongodb://localhost:27017/cat-shop", {
+  // .connect("mongodb://LandWind:27170/cat-shop", {
+      .connect("mongodb://localhost:27017/cat-shop", {
     // useNewUrlParser: true,
     // useUnifiedTopology:true,
     useUnifiedTopology: true, 
