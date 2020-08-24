@@ -9,7 +9,7 @@ const jwtMiddle = require("express-jwt"); // 验证jwt数据
 const cors = require("cors"); // 服务器端处理跨域
 
 const { jwtSecret } = require("./utils/config");
-const { Manager } = require("./models");
+const { Manager, Product } = require("./models");
 
 const app = express();
 
@@ -147,4 +147,21 @@ async function initManager() {
     await admin.save();
   }
 }
+//初始化products表
+async function initProducts(){
+  const products = ["IPhone 11 苹果11", "华为Mate40 pro", "小米10 Pro 至尊版"];
+  await products.map(p => {
+        const product = new Product({
+          name: p,
+          descriptions: p,
+          onSale: false,
+          content: p,
+          quantity: 10,
+          price: 4899,
+        });
+          product.save();
+  });
+}
+
 initManager();
+initProducts();
