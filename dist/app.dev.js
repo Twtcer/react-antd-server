@@ -180,7 +180,8 @@ function initManager() {
           admin = new Manager({
             userName: "admin",
             password: pwd,
-            nickName: "超级管理员"
+            nickName: "超级管理员",
+            roles: "admin,system"
           });
           _context2.next = 9;
           return regeneratorRuntime.awrap(admin.save());

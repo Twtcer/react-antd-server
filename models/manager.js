@@ -15,6 +15,9 @@ const managerSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
+  roles: {
+    type: String,
+  },
 }, {
   timestamps: true,
 });
